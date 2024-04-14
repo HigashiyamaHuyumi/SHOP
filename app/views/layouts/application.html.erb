@@ -12,11 +12,14 @@
   </head>
 
   <body>
-    
+
     <header>
       <nav class="navbar navbar-expand-lg text-white">
         <div class="container">
-          <%= link_to "shop", root_path, class: "navbar-brand my-comics-link" %>
+
+          <%= link_to root_path , class: 'logo' do %>
+            <%= image_tag('logo.png', size: '120x60') %>
+          <% end %>
 
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon">
@@ -74,7 +77,7 @@
         </div>
       </nav>
     </header>
-    
+
     <%= yield %>
   </body>
 </html>
