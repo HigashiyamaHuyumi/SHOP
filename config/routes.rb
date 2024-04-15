@@ -3,9 +3,12 @@ Rails.application.routes.draw do
   devise_for :users
   
   scope module: 'user' do
-    resources :user, only: [:update] do # 顧客リソース用のルートを追加
-		  get :confirm, on: :member # 退会確認ページ用のルート
-      patch :withdrawal, on: :member # 退会処理用のルート
+
+		get '/users/my_page', to: 'users#my_page', as: 'my_page'
+		get '/users/my_page/infomation', to: 'users#infomation', as: 'infomation'
+    resources :users, only: [:show, :update] do
+		  get :confirm, on: :member # 退会確認
+      patch :withdrawal, on: :member # 退会処理
 		end
 	end
 	

@@ -7,32 +7,38 @@
 
       <b>会員のお客様</b>
 
-      <p>メールアドレスとパスワードを入力してログインしてください。</p>
+      <div class="login" style="background-color: #F8F2F7;">
 
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="field">
-          <%= f.label :メールアドレス %>:
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-        </div>
+        <p>メールアドレスとパスワードを入力してログインしてください。</p>
 
-        <div class="field">
-          <%= f.label :パスワード %>:
-          <%= f.password_field :password, autocomplete: "current-password" %>
-        </div>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="field">
+            <%= f.label :メールアドレス %>:
+            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          </div>
 
-        <div class="actions">
-          <%= f.submit "ログイン" , class: "btn btn-danger" %>
-        </div>
-      <% end %>
+          <div class="field">
+            <%= f.label :パスワード %>:
+            <%= f.password_field :password, autocomplete: "current-password" %>
+          </div>
 
-      <%= link_to "パスワードをお忘れの方はこちら", new_user_password_path %>
+          <div class="actions">
+            <%= f.submit "ログイン" , class: "btn btn-danger" %>
+          </div>
+        <% end %>
 
+        <%= link_to "パスワードをお忘れの方はこちら", new_user_password_path %>
+
+      </div>
     </div>
 
     <div class="col-md-6 text-center">
       <b>初めてご利用の方</b>
 
-      <%= link_to "新規登録", new_user_registration_path , class: "btn btn-danger" %>
+      <div class="login" style="background-color: #F8F2F7;">
+
+        <%= link_to "新規登録", new_user_registration_path , class: "btn btn-danger" %>
+      </div>
     </div>
 
   </div>
