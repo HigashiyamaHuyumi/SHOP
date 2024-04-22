@@ -1,0 +1,37 @@
+
+
+  <div class="row">
+    <div class="col-md-6">
+    <table class="table" style="border: 1px solid black;">
+      <tbody>
+        <% if @customer.present? %>
+          <tr>
+            <th style="border: 1px solid black;">氏名</th>
+            <td style="border: 1px solid black;"><%= @customer.last_name %>　<%= @customer.first_name %></td>
+          </tr>
+       　  <tr>
+            <th style="border: 1px solid black;">カナ</th>
+            <td style="border: 1px solid black;"><%= @customer.last_name_kana %>　<%= @customer.first_name_kana %></td>
+          </tr>
+           <tr>
+            <th style="border: 1px solid black;">郵便番号</th>
+            <td style="border: 1px solid black;"><%= @customer.postal_code %>
+          </tr>
+           <tr>
+            <th style="border: 1px solid black;">住所</th>
+            <td style="border: 1px solid black;"><%= @customer.address %>
+          </tr>
+          <tr>
+            <th style="border: 1px solid black;">電話番号</th>
+            <td style="border: 1px solid black;"><%= @customer.telephone_number %>
+          </tr>
+          <tr>
+            <th style="border: 1px solid black;">メールアドレス</th>
+            <td style="border: 1px solid black;"><%= @customer.email %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    </div>
+  </div>
+

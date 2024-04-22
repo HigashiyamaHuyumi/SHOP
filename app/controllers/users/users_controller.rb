@@ -13,7 +13,7 @@ class Users::UsersController < ApplicationController
     @user = current_user
     if @user.update(user_params)
       flash[:notice] = '登録情報を更新しました'
-      redirect_to users_my_page_path # 更新成功時にマイページにリダイレクト
+      redirect_to users_my_page_path 
     else
       render 'users_information_edit'
     end
@@ -39,7 +39,7 @@ class Users::UsersController < ApplicationController
   end
 
   def is_matching_login_user
-    user = user.find(params[:id])
+    user = User.find(params[:id])
     unless user.id == current_user.id
       redirect_to user_path(current_user)
     end
