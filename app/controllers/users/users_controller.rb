@@ -5,7 +5,7 @@ class Users::UsersController < ApplicationController
     @user = current_user
   end
 
-  def edit #顧客の登録情報編集画面
+  def infomation #顧客の登録情報編集画面
     @user = current_user
   end
 
@@ -13,7 +13,7 @@ class Users::UsersController < ApplicationController
     @user = current_user
     if @user.update(user_params)
       flash[:notice] = '登録情報を更新しました'
-      redirect_to users_my_page_path 
+      redirect_to users_my_page_path
     else
       render 'users_information_edit'
     end
