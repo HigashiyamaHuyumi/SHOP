@@ -1,18 +1,32 @@
 <div class="container">
-<h5 style="text-align: center;">
-  <b>会員登録情報</b>
-</h5>
+  <h5 style="text-align: center;">
+    <b>会員登録情報</b>
+  </h5>
 
 
   <div class="row justify-content-center">
     <div class="col-md-6">
+      <ul>
 
-          <div class="col-md-12">
-            <%= link_to info_path do %>
-              会員登録情報の変更
-            <% end %>
-          </div>
+        <li>
+          <%= link_to info_path do %>
+            会員登録情報の変更
+          <% end %>
+        </li>
 
+        <li>
+          <%= link_to confirm_user_path(@user) do %>
+            退会手続き
+          <% end %>
+        </li>
+
+        <li>
+          <%= link_to info_path do %>
+            注文履歴
+          <% end %>
+        </li>
+
+      </ul>
     </div>
   </div>
 </div>
