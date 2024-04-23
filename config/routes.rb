@@ -5,8 +5,9 @@ Rails.application.routes.draw do
 
 
   scope module: 'users' do
-		get '/users/my_page', to: 'users#my_page', as: 'my_page'
-		get '/users/my_page/infomation', to: 'users#infomation', as: 'infomation'
+		get '/users/mypage', to: 'users#mypage', as: 'mypage'
+		get '/users/mypage/info', to: 'users#info', as: 'info'
+		get '/users/mypage/info_edit', to: 'users#edit', as: 'edit'
     resources :users, only: [:show, :update] do
 		  get :confirm, on: :member # 退会確認
       patch :withdrawal, on: :member # 退会処理

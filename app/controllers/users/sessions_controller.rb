@@ -8,13 +8,13 @@ class Users::SessionsController < Devise::SessionsController
 
     if user && user.valid_password?(params[:user][:password]) && user.is_active
       sign_in user
-      redirect_to my_page_path
+      redirect_to mypage_path
     else
       flash[:alert] = "ログインできません。アカウントが無効になっているか、パスワードが正しくありません。"
       render 'user/registrations/new'
     end
   end
-  
+
   protected
 
   def user_state

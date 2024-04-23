@@ -6,26 +6,21 @@
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
-        
+
         <div class="row form-group">
-          <div class="col-md-12">
-            <%= f.label :'名前（必須)' %>
-          </div>
+          <%= f.label :'名前（必須)' , class: "col-md-12" %>
           <%= f.text_field :last_name, placeholder: '(例)山田',autofocus: true, class: "col-md-6 example-text" %>
           <%= f.text_field :first_name, placeholder: '(例)太郎',autofocus: true, class: "col-md-6 example-text" %>
         </div>
 
         <div class="row form-group">
-          <div class="col-md-12">
-            <%= f.label :'カナ（必須）' %>
-          </div>
+          <%= f.label :'カナ（必須）' , class: "col-md-12" %>
           <%= f.text_field :last_name_kana, placeholder: '(例)ヤマダ', autofocus: true, class: "col-md-6" %>
           <%= f.text_field :first_name_kana, placeholder: '(例)タロウ', autofocus: true, class: "col-md-6" %>
         </div>
 
         <div class="row form-group">
           <%= f.label :メールアドレス, class: "col-md-12" %>
-          <div class="col-md-1"></div>
           <%= f.email_field :email, placeholder: 'メールアドレスを入力してください。', autofocus: true, class: "col-md-12" %>
         </div>
 
@@ -41,7 +36,6 @@
 
         <div class="row form-group">
           <%= f.label :住所, class: "col-md-12" %>
-          <div class="col-md-1"></div>
           <%= f.text_field :address, placeholder: '○○県△△市××町1-2-3' , autofocus: true, class: "col-md-12" %>
         </div>
 

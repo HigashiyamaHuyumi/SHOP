@@ -1,6 +1,11 @@
 <div class="container">
-<h5 style="text-align: center;"><b>会員登録情報</b></h5>
-<%= link_to infomation_path(@user) %>
+<h5 style="text-align: center;">
+  <b>会員登録情報</b>
+  <%= link_to edit_path do %>
+    <i class="fa-solid fa-user-pen"></i>
+  <% end %>
+</h5>
+
 
   <div class="row justify-content-center">
     <div class="col-md-6">

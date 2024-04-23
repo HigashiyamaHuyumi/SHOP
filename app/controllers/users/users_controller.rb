@@ -1,11 +1,15 @@
 class Users::UsersController < ApplicationController
   before_action :is_matching_login_user, only: [:show, :update, :confirm, :withdrawal]
 
-  def my_page #顧客のマイページ
+  def mypage #顧客のマイページ
     @user = current_user
   end
 
-  def infomation #顧客の登録情報編集画面
+  def info #顧客の登録情報編集画面
+    @user = current_user
+  end
+
+  def edit #顧客の登録情報編集画面
     @user = current_user
   end
 
@@ -13,9 +17,9 @@ class Users::UsersController < ApplicationController
     @user = current_user
     if @user.update(user_params)
       flash[:notice] = '登録情報を更新しました'
-      redirect_to users_my_page_path
+      redirect_to info_path
     else
-      render 'users_information_edit'
+      render 'users_info_edit'
     end
   end
 
