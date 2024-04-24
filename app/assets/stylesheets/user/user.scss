@@ -2,4 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.btn.btn-dark , .btn.btn-light , .btn.btn-outline-danger {
+  height: 40px; /* 適切な高さ */
+  border-radius: 20px; /* 楕円形にするために半分の高さを設定 */
+  cursor: pointer;
+}
 
+.btn.btn-light {
+  margin: 20px auto;
+  border: 1px solid #333
+}

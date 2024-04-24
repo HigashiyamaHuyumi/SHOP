@@ -16,7 +16,6 @@
         </ul>
       <% end %>
 
-
       <div class="row form-group">
         <div class="col-md-12">
           <b><%= f.label :'名前（必須)' %></b>
@@ -34,16 +33,6 @@
       </div>
 
       <div class="row form-group">
-        <b><%= f.label :メールアドレス, class: "col-md-12" %></b>
-        <%= f.email_field :email, placeholder: 'メールアドレスを入力してください。', autofocus: true, class: "col-md-12" %>
-      </div>
-
-      <div class="row form-group">
-        <b><%= f.label :"電話番号(ハイフンなし)", class: "col-md-12" %></b>
-        <%= f.text_field :telephone_number, placeholder: '0123456789', autofocus: true, class: "col-md-12" %>
-      </div>
-
-      <div class="row form-group">
         <b><%= f.label :"郵便番号(ハイフンなし)", class: "col-md-12" %></b>
         <%= f.text_field :postal_code, placeholder: '0123456', autofocus: true, class: "col-md-12" %>
       </div>
@@ -53,13 +42,30 @@
         <%= f.text_field :address, placeholder: '○○県△△市××町1-2-3' , autofocus: true, class: "col-md-12" %>
       </div>
 
-      <div class="row">
-        <div class="col-md-12">
-          <%= f.submit "変更する" ,class: "btn btn-dark" %>
-        </div>
-      　<% end %>
+      <div class="row form-group">
+        <b><%= f.label :"電話番号(ハイフンなし)", class: "col-md-12" %></b>
+        <%= f.text_field :telephone_number, placeholder: '0123456789', autofocus: true, class: "col-md-12" %>
       </div>
 
+      <div class="row form-group">
+        <b><%= f.label :メールアドレス, class: "col-md-12" %></b>
+        <%= f.email_field :email, placeholder: 'メールアドレスを入力してください。', autofocus: true, class: "col-md-12" %>
+        <p style="color: red;">ログインの際に必要になります。忘れないようにしてください。</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <%= f.submit "変更する" ,class: "btn btn-dark btn-block" %>
+        </div>
+      </div>
+      
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <%= link_to "戻る", mypage_path , class: "btn btn-light btn-block" %>
+        </div>
+      </div>
+
+    <% end %>
     </div>
   </div>
 </div>

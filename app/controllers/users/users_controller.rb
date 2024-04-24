@@ -5,7 +5,7 @@ class Users::UsersController < ApplicationController
     @user = current_user
   end
 
-  def info #顧客の登録情報編集画面
+  def info #顧客の登録情報画面
     @user = current_user
   end
 

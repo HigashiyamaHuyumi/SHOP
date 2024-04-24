@@ -7,18 +7,31 @@
     <div class="col-md-10">
       <p>下記の注意事項を確認のうえ、チェックを入れて「退会する」ボタンを押してください</p>
 
-      <div class="form-group">
-          <label><input type="checkbox" name="item1">退会後、登録内容はできなくなります</label>
-      </div>
-      <div class="form-group">
-          <label><input type="checkbox" name="item2">既にご注文いただいている商品は、退会後も発送させていただきます</label>
+      <div class="withdraw-checked">
+        <label>
+          <input type="checkbox" name="withdraw_agreement" id="withdraw-agreement">
+          退会後、登録内容はできなくなります
+        </label>
       </div>
 
+      <div class="withdraw-checked">
+        <label>
+          <input type="checkbox" name="withdraw_agreement" id="withdraw-agreement">
+          既にご注文いただいている商品は、退会後も発送させていただきます
+        </label>
+      </div>
 
-      <%= link_to "戻る", mypage_path , class: "btn btn-primary" %>
-      <%= form_with(model: @user, url: withdrawal_user_path(@user), method: :patch, id: 'withdrawal-form', data: { confirm: "本当に退会しますか？" }) do |f| %>
-        <%= f.submit "退会する", class: "btn btn-danger" %>
-      <% end %>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <%= link_to "退会する", withdrawal_user_path, method: :patch, class: "btn btn-outline-danger btn-block", id: "withdraw-button", disabled: true %>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <%= link_to "戻る", mypage_path , class: "btn btn-light btn-block" %>
+        </div>
+      </div>
 
     </div>
   </div>
